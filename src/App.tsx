@@ -1,17 +1,19 @@
-import { useState } from 'react'
-
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes as Switch,
+} from "react-router-dom";
+import { Login, Home } from "@/pages";
 
 function App() {
-  const [count, setCount] = useState(0)
-  setCount(1);
-  console.log(count);
   return (
-    <>
-      <div>
-        <h3>Teste Frontend PL </h3>
-      </div>
-    </>
-  )
+    <Router>
+      <Switch>
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Login />} />
+      </Switch>
+    </Router>
+  );
 }
 
-export default App
+export default App;
