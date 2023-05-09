@@ -1,7 +1,7 @@
 import React, { InputHTMLAttributes } from "react";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
-  error?: string;
+  error?: string | boolean;
   containerClassName?: string;
   labelClassName?: string;
   inputClassName?: string;
@@ -22,7 +22,7 @@ const Input: React.FC<InputProps> = ({
           error ? "border-red-500" : ""
         } ${inputClassName}`}
       />
-      {error && <p className="text-red-500 text-lg mt-1">{error}</p>}
+      {error && <p className="text-red text-sm mt-1">{error}*</p>}
     </div>
   );
 };
