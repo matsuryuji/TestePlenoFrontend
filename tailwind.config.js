@@ -14,6 +14,9 @@ export default {
         gray: "#8492a6",
         "gray-light": "#d3dce6",
       },
+      backgroundColor: {
+        red: "#990000",
+      },
     },
     screens: {
       sm: "640px",

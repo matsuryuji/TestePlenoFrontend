@@ -1,5 +1,6 @@
+import Button from "@/components/Button/Button";
 import React from "react";
 
 export default function Login() {
-  return <div className="flex flex-row justify-center text-green">Teste</div>;
+  return <Button className="bg-red text-white">Entrar</Button>;
 }
