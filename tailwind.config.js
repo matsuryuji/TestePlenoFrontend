@@ -9,7 +9,8 @@ export default {
       xs: ".75rem",
       sm: ".875rem",
       base: "12px",
-      lg: "1.125rem",
+      medium: "16px",
+      lg: "24px",
       xl: "64px",
     },
     extend: {
@@ -23,13 +24,16 @@ export default {
         orange: "#ff7849",
         green: "#13ce66",
         yellow: "#ffc82c",
-        "gray-dark": "#273444",
-        gray: "#8492a6",
+        "gray-dark": "#828282",
+        gray: "#D9D9D9",
+        placeholder: "#828282",
         "gray-light": "#d3dce6",
+        red: "#990000",
       },
       backgroundColor: {
         red: "#990000",
         dark: "#414141",
+        gray: "#D9D9D9",
       },
     },
     screens: {
