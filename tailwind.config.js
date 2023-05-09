@@ -2,7 +2,20 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      sans: ["Poppins", "sans-serif"],
+    },
+    fontSize: {
+      xs: ".75rem",
+      sm: ".875rem",
+      base: "12px",
+      lg: "1.125rem",
+      xl: "64px",
+    },
     extend: {
+      lineHeight: {
+        title: "96px",
+      },
       colors: {
         blue: "#1fb6ff",
         purple: "#7e5bef",
@@ -16,6 +29,7 @@ export default {
       },
       backgroundColor: {
         red: "#990000",
+        dark: "#414141",
       },
     },
     screens: {
