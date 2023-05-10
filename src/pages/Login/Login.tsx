@@ -5,6 +5,8 @@ import { Input, Button } from "@/components";
 import { Formik, Form, Field, FormikProps } from "formik";
 import { iForm } from "@/interfaces/iForm";
 import { LOGIN_SCHEMA } from "@/schema/schema";
+import axios, { AxiosResponse } from "axios";
+import { useNavigate } from "react-router-dom";
 
 const initialValues: iForm = {
   email: "",
@@ -12,9 +14,25 @@ const initialValues: iForm = {
 };
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const handleSubmit = (values: iForm) => {
-    console.log(values);
+    axios
+      .get<iForm>("http://localhost:3333/login")
+      .then((res: AxiosResponse<iForm>) => {
+        console.log(res.data);
+        console.log(values.password);
+        if (
+          res.data.email === values.email &&
+          res.data.password === values.password
+        ) {
+          navigate("/home");
+        } else {
+          alert("Email ou Senha Incorreta");
+        }
+      });
   };
+
   return (
     <div className="bg-dark w-full h-full">
       <div className="flex flex-row justify-around items-center w-full h-full">
@@ -63,7 +81,7 @@ export default function Login() {
                     <Input
                       id="password"
                       name="password"
-                      type="text"
+                      type="password"
                       placeholder="Senha"
                       containerClassName="w-[284px] mb-[84px]"
                       inputClassName="h-[51px]"
