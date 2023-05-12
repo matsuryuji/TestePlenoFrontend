@@ -17,11 +17,21 @@ export default {
       xl: "64px",
     },
     extend: {
+      boxShadow: {
+        sm: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+      },
+      dropShadow: {
+        sm: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+      },
       fontFamily: {
         sans: ["sans-serif"],
         strong: ["strong"],
         inter: ["Inter"],
         teko: ["Teko"],
+        "rubik-glitch": ["Rubik Glitch"],
+        "russo-one": ["Russo One"],
+        "saira-stencil-one": ["Saira Stencil One"],
+        "rubik-wet-paint": ["Rubik Wet Paint"],
       },
       lineHeight: {
         title: "96px",
@@ -32,6 +42,8 @@ export default {
         red: "#990000",
         "light-gray": "#B1AEAE",
         "light-red": "#B80000",
+        yellow: "#F0AD00",
+        blue: "#003A91",
       },
       backgroundColor: {
         red: "#990000",
@@ -39,6 +51,8 @@ export default {
         "dark-gray": "#2E2E2E",
         "light-red": "#B80000",
         gray: "#D9D9D9",
+        yellow: "#F0AD00",
+        blue: "#003A91",
       },
     },
     screens: {

@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import PEOPLE from "@/assets/people.png";
 import BOOKSS from "@/assets/Bookss.svg";
-import { Divider, Navbar } from "@/components";
+import { CategoryBox, Divider, Navbar } from "@/components";
 
 export default function Home() {
   const [book, setBook] = useState([]);
@@ -57,7 +57,7 @@ export default function Home() {
       </div>
       <div className="flex flex-row">
         <div className="flex flex-col mt-4 ml-4 mr-5">
-          <div className="bg-light-red w-[331px] h-[238px] mb-3 rounded-md">
+          <div className="bg-light-red w-[331px] h-[238px] mb-3 rounded-md shadow-sm">
             <h1 className="font-teko text-white text-xl mt-12 ml-4 leading-[50px]">
               Novos Livros
             </h1>
@@ -72,7 +72,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="flex flex-row"></div>
+          <CategoryBox />
         </div>
       </div>
     </div>
