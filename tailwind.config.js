@@ -14,6 +14,7 @@ export default {
       base: "12px",
       medium: "16px",
       lg: "24px",
+      "2lg": "54px",
       xl: "64px",
     },
     extend: {
@@ -28,6 +29,7 @@ export default {
         strong: ["strong"],
         inter: ["Inter"],
         teko: ["Teko"],
+        sail: ["Sail"],
         "rubik-glitch": ["Rubik Glitch"],
         "russo-one": ["Russo One"],
         "saira-stencil-one": ["Saira Stencil One"],

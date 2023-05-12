@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import PEOPLE from "@/assets/people.png";
 import BOOKSS from "@/assets/Bookss.svg";
+import BIOGRAFIAS from "@/assets/ImageBiografias.svg";
 import { CategoryBox, Divider, Navbar } from "@/components";
 
 export default function Home() {
@@ -73,6 +74,17 @@ export default function Home() {
             </div>
           </div>
           <CategoryBox />
+          <div className="bg-blue w-[333px] h-[313px] mt-4 rounded-md shadow-sm">
+            <div className="flex flex-col items-center mt-5">
+              <img src={BIOGRAFIAS} alt="Briografias" className="rounded-sm" />
+              <h1 className="font-sail text-white text-2lg leading-[50px] mt-2">
+                Biografias
+              </h1>
+              <p className="font-teko text-white text-lg w-[55%] text-center mt-2 leading-[28px]">
+                Grandes mentes da sociedade
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
