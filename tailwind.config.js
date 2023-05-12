@@ -21,6 +21,7 @@ export default {
         sans: ["sans-serif"],
         strong: ["strong"],
         inter: ["Inter"],
+        teko: ["Teko"],
       },
       lineHeight: {
         title: "96px",
@@ -36,7 +37,7 @@ export default {
         red: "#990000",
         dark: "#414141",
         "dark-gray": "#2E2E2E",
-        "light-blue": "#B80000",
+        "light-red": "#B80000",
         gray: "#D9D9D9",
       },
     },

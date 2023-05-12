@@ -3,7 +3,7 @@ import BOOKS from "@/assets/books.svg";
 import LIBRARY from "@/assets/library.svg";
 import TEAM from "@/assets/team.svg";
 
-export default function NavBar() {
+const Navbar: React.FC = () => {
   return (
     <div className="flex flex-row justify-center">
       <div className="flex flex-row cursor-pointer">
@@ -30,4 +30,6 @@ export default function NavBar() {
       </div>
     </div>
   );
-}
+};
+
+export default Navbar;
