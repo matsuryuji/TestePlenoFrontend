@@ -30,11 +30,13 @@ export default {
         placeholder: "#828282",
         red: "#990000",
         "light-gray": "#B1AEAE",
+        "light-red": "#B80000",
       },
       backgroundColor: {
         red: "#990000",
         dark: "#414141",
         "dark-gray": "#2E2E2E",
+        "light-blue": "#B80000",
         gray: "#D9D9D9",
       },
     },

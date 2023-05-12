@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import PEOPLE from "@/assets/people.png";
-import { Divider } from "@/components";
+import { Box, Divider } from "@/components";
 import NavBar from "@/components/Navbar/Navbar";
 
 export default function Home() {
@@ -56,7 +56,12 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-row">
-        <div className="flex flex-col"></div>
+        <div className="flex flex-col">
+          <Box
+            bgColor="light-red"
+            boxClassName="w-[331px] h-[238px] mt-4 ml-4 mb-3 mr-5 rounded-md"
+          ></Box>
+        </div>
       </div>
     </div>
   );
