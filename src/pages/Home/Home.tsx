@@ -3,14 +3,19 @@ import React, { useEffect, useState } from "react";
 import PEOPLE from "@/assets/people.png";
 import BOOKSS from "@/assets/Bookss.svg";
 import BIOGRAFIAS from "@/assets/ImageBiografias.svg";
-import { CategoryBox, Divider, Navbar } from "@/components";
+import { CategoryBox, Divider, FavoriteBook, Navbar } from "@/components";
+import { iFavoriteBook } from "@/interfaces/iFavoriteBook";
 
 export default function Home() {
-  const [book, setBook] = useState([]);
+  const [books, setBooks] = useState<iFavoriteBook[]>([]);
 
   useEffect(() => {
     axios.get("http://localhost:3333/livros").then((res) => {
-      setBook(res.data);
+      const filterFavoriteBooks = res.data.filter(
+        (item: { FL_FAVORITO: boolean }) => item.FL_FAVORITO
+      );
+      console.log(filterFavoriteBooks);
+      setBooks(filterFavoriteBooks);
     });
   }, []);
 
@@ -56,8 +61,8 @@ export default function Home() {
           <Divider className="my-1 w-[440px] border-light-gray" />
         </div>
       </div>
-      <div className="flex flex-row">
-        <div className="flex flex-col mt-4 ml-4 mr-5">
+      <div className="flex flex-row mt-4">
+        <div className="flex flex-col  ml-4 mr-5">
           <div className="bg-light-red w-[331px] h-[238px] mb-3 rounded-md shadow-sm">
             <h1 className="font-teko text-white text-xl mt-12 ml-4 leading-[50px]">
               Novos Livros
@@ -84,6 +89,14 @@ export default function Home() {
                 Grandes mentes da sociedade
               </p>
             </div>
+          </div>
+        </div>
+        <div className="flex flex-col">
+          <h1 className="font-inter font-medium text-3lg">Livros Favoritos</h1>
+          <div className="flex flex-row gap-8">
+            {books.map((book) => (
+              <FavoriteBook key={book.ID} book={book} />
+            ))}
           </div>
         </div>
       </div>

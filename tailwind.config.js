@@ -15,6 +15,7 @@ export default {
       medium: "16px",
       lg: "24px",
       "2lg": "54px",
+      "3lg": "32px",
       xl: "64px",
     },
     extend: {
