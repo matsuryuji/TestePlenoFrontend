@@ -5,6 +5,7 @@ import BOOKSS from "@/assets/Bookss.svg";
 import BIOGRAFIAS from "@/assets/ImageBiografias.svg";
 import { CategoryBox, Divider, FavoriteBook, Navbar } from "@/components";
 import { iFavoriteBook } from "@/interfaces/iFavoriteBook";
+import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 
 export default function Home() {
   const [books, setBooks] = useState<iFavoriteBook[]>([]);
@@ -93,10 +94,13 @@ export default function Home() {
         </div>
         <div className="flex flex-col">
           <h1 className="font-inter font-medium text-3lg">Livros Favoritos</h1>
-          <div className="flex flex-row gap-8">
+          <div className="flex flex-row gap-8 relative">
             {books.map((book) => (
               <FavoriteBook key={book.ID} book={book} />
             ))}
+            <div className="absolute">
+              <AiOutlineArrowRight />
+            </div>
           </div>
         </div>
       </div>
