@@ -44,7 +44,7 @@ const FavoriteBook: React.FC<FavoriteBookProps> = ({ book }) => {
   };
 
   return (
-    <div className="flex flex-row w-[323px] h-[148px] bg-[url('@/assets/backgroundTexture.png')] drop-shadow-sm">
+    <div className="flex flex-row w-[323px] h-[148px] bg-[url('@/assets/backgroundTexture.png')] drop-shadow-sm rounded-md">
       <div className="flex flex-row mt-2 ml-1">
         <img
           src={filterMockImage(book.ID)}

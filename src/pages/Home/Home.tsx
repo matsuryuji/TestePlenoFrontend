@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PEOPLE from "@/assets/people.png";
 import BOOKSS from "@/assets/Bookss.svg";
 import BIOGRAFIAS from "@/assets/ImageBiografias.svg";
@@ -9,13 +9,38 @@ import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 
 export default function Home() {
   const [books, setBooks] = useState<iFavoriteBook[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const windowRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handlePrevClick = () => {
+    if (carouselRef.current && windowRef.current) {
+      const width = carouselRef.current.offsetWidth;
+      setCurrentIndex(
+        currentIndex + windowRef.current?.offsetWidth <= width
+          ? currentIndex * 0
+          : currentIndex - 300
+      );
+    }
+  };
+
+  const handleNextClick = () => {
+    if (carouselRef.current && windowRef.current) {
+      const width = carouselRef.current.offsetWidth;
+      setCurrentIndex(
+        currentIndex + windowRef.current?.offsetWidth >= width
+          ? currentIndex * 0
+          : currentIndex + 300
+      );
+    }
+  };
 
   useEffect(() => {
     axios.get("http://localhost:3333/livros").then((res) => {
       const filterFavoriteBooks = res.data.filter(
         (item: { FL_FAVORITO: boolean }) => item.FL_FAVORITO
       );
-      console.log(filterFavoriteBooks);
       setBooks(filterFavoriteBooks);
     });
   }, []);
@@ -62,6 +87,7 @@ export default function Home() {
           <Divider className="my-1 w-[440px] border-light-gray" />
         </div>
       </div>
+
       <div className="flex flex-row mt-4">
         <div className="flex flex-col  ml-4 mr-5">
           <div className="bg-light-red w-[331px] h-[238px] mb-3 rounded-md shadow-sm">
@@ -92,14 +118,45 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col overflow-x-hidden " ref={windowRef}>
           <h1 className="font-inter font-medium text-3lg">Livros Favoritos</h1>
-          <div className="flex flex-row gap-8 relative">
-            {books.map((book) => (
-              <FavoriteBook key={book.ID} book={book} />
-            ))}
-            <div className="absolute">
-              <AiOutlineArrowRight />
+          <div
+            className="relative"
+            onMouseEnter={() => setIsVisible(true)}
+            onMouseLeave={() => setIsVisible(false)}
+          >
+            {isVisible ? (
+              <>
+                <div
+                  className="flex items-center absolute justify-center right-0 h-full z-50  bg-gray bg-opacity-60 h-full cursor-pointer w-10 hover:bg-gray  transition duration-700 ease-in-out rounded-sm"
+                  onClick={handleNextClick}
+                >
+                  <AiOutlineArrowRight />
+                </div>
+                {currentIndex > 0 ? (
+                  <div
+                    className="flex items-center justify-center absolute h-full z-50 bg-opacity-60 h-full bg-gray cursor-pointer w-10 hover:bg-gray opacity-100 transition duration-700 ease-in-out rounded-sm"
+                    onClick={handlePrevClick}
+                  >
+                    <AiOutlineArrowLeft />
+                  </div>
+                ) : (
+                  <></>
+                )}
+              </>
+            ) : (
+              <></>
+            )}
+            <div
+              ref={carouselRef}
+              className="flex flex-row gap-8 w-max transition-all duration-500 ease-in-out "
+              style={{
+                transform: `translateX(-${currentIndex}px)`,
+              }}
+            >
+              {books.map((book) => (
+                <FavoriteBook key={book.ID} book={book} />
+              ))}
             </div>
           </div>
         </div>

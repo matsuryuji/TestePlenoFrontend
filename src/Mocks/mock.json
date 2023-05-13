@@ -43,7 +43,7 @@
       "DATA_PUBLICACAO": "2023-01-15",
       "EDITORA": "HarperCollins",
       "AUTOR": "Clive Staples Lewis",
-      "FL_FAVORITO": false
+      "FL_FAVORITO": true
     },
     {
       "ID": 6,
@@ -52,7 +52,7 @@
       "DATA_PUBLICACAO": "2019-10-25",
       "EDITORA": "HarperCollins",
       "AUTOR": "J. R. R. Tolkien",
-      "FL_FAVORITO": false
+      "FL_FAVORITO": true
     },
     {
       "ID": 7,
