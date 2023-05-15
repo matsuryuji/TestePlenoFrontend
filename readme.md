@@ -15,7 +15,7 @@
 
 Abrirá na porta http://localhost:3333.
 ## `O que eu gostaria que fosse feito`
-3. Essa listagem são tarefas que eu poderia ter feito e ter aperfeiçoado mais o projeto mas que acabei não tendo tempo e para não atrasar mais o teste do que já estava.
+Essa listagem são tarefas que eu poderia ter feito e ter aperfeiçoado mais o projeto mas que acabei não tendo tempo e para não atrasar mais o teste do que já estava.
 
 - Testes unitários nos componentes;
 - Validações de trativa de erro caso a api não conseguir ser chamado (exemplo: tratar erro 400);
