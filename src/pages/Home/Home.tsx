@@ -3,11 +3,56 @@ import React, { useEffect, useRef, useState } from "react";
 import PEOPLE from "@/assets/people.png";
 import BOOKSS from "@/assets/Bookss.svg";
 import BIOGRAFIAS from "@/assets/ImageBiografias.svg";
-import { CategoryBox, Divider, FavoriteBook, Navbar } from "@/components";
+import IT from "@/assets/it.png";
+import EDLORRAINE from "@/assets/edlorraine.png";
+import COMAMOR from "@/assets/comamor.png";
+import {
+  CategoryBox,
+  CommentBook,
+  Divider,
+  FavoriteBook,
+  Navbar,
+} from "@/components";
 import { iFavoriteBook } from "@/interfaces/iFavoriteBook";
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
+import { iCommentBook } from "@/interfaces/iCommentBook";
 
 export default function Home() {
+  const mockBook: iCommentBook[] = [
+    {
+      id: 1,
+      image: EDLORRAINE,
+      comments: 250,
+      like: 15,
+      title: "ED & Lorraine Warren",
+      commentAuthor: "Alinne Lauren",
+      commentDescription:
+        " Fiquei presa nessa trilogia, conta a história dos demonólogos Ed e Lorraine Warren, a tragetória deles como investigadores de eventos paranoramais, a história lorem impsun dhiuasdhiusahiuaddjnsaijodasjoidoaijsdjioasdjoiasjoidas",
+      date: "2022-10-06T19:14:00.000Z",
+    },
+    {
+      id: 2,
+      image: IT,
+      comments: 250,
+      like: 15,
+      title: "IT a coisa",
+      commentAuthor: "Larissa Machado",
+      commentDescription:
+        "História boa, fala sobre um palhaço assassino que mata crianças para alimentar-se e um grupo de sete adolescentes resolve dete-lo, porém, confesso que o final foi decepcionante.",
+      date: "2022-11-12T15:18:00.000Z",
+    },
+    {
+      id: 3,
+      image: COMAMOR,
+      comments: 250,
+      like: 15,
+      title: "Com amor Anthony",
+      commentAuthor: "Augusto Fontes",
+      commentDescription:
+        "História conta a vida da mãe de um garoto autista,que sofre dificuldades constantemente, e posteriormente a criança não resiste vindo a falecer, seu casamento Testestestestestestestetestestestes",
+      date: "2022-11-14T07:45:00.000Z",
+    },
+  ];
   const [books, setBooks] = useState<iFavoriteBook[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -87,7 +132,6 @@ export default function Home() {
           <Divider className="my-1 w-[440px] border-light-gray" />
         </div>
       </div>
-
       <div className="flex flex-row mt-4">
         <div className="flex flex-col  ml-4 mr-5">
           <div className="bg-light-red w-[331px] h-[238px] mb-3 rounded-md shadow-sm">
@@ -118,44 +162,61 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col overflow-x-hidden " ref={windowRef}>
-          <h1 className="font-inter font-medium text-3lg">Livros Favoritos</h1>
-          <div
-            className="relative"
-            onMouseEnter={() => setIsVisible(true)}
-            onMouseLeave={() => setIsVisible(false)}
-          >
-            {isVisible ? (
-              <>
-                <div
-                  className="flex items-center absolute justify-center right-0 h-full z-50  bg-gray bg-opacity-60 h-full cursor-pointer w-10 hover:bg-gray  transition duration-700 ease-in-out rounded-sm"
-                  onClick={handleNextClick}
-                >
-                  <AiOutlineArrowRight />
-                </div>
-                {currentIndex > 0 ? (
-                  <div
-                    className="flex items-center justify-center absolute h-full z-50 bg-opacity-60 h-full bg-gray cursor-pointer w-10 hover:bg-gray opacity-100 transition duration-700 ease-in-out rounded-sm"
-                    onClick={handlePrevClick}
-                  >
-                    <AiOutlineArrowLeft />
-                  </div>
-                ) : (
-                  <></>
-                )}
-              </>
-            ) : (
-              <></>
-            )}
+        <div className="flex flex-col overflow-x-hidden ">
+          <div className="flex flex-col" ref={windowRef}>
+            <h1 className="font-inter font-medium text-3lg mb-4">
+              Livros Favoritos
+            </h1>
             <div
-              ref={carouselRef}
-              className="flex flex-row gap-8 w-max transition-all duration-500 ease-in-out "
-              style={{
-                transform: `translateX(-${currentIndex}px)`,
-              }}
+              className="relative"
+              onMouseEnter={() => setIsVisible(true)}
+              onMouseLeave={() => setIsVisible(false)}
             >
-              {books.map((book) => (
-                <FavoriteBook key={book.ID} book={book} />
+              {isVisible ? (
+                <>
+                  <div
+                    className="flex items-center absolute justify-center right-0 h-full z-50  bg-gray bg-opacity-60 h-full cursor-pointer w-10 hover:bg-gray  transition duration-700 ease-in-out rounded-sm"
+                    onClick={handleNextClick}
+                  >
+                    <AiOutlineArrowRight />
+                  </div>
+                  {currentIndex > 0 ? (
+                    <div
+                      className="flex items-center justify-center absolute h-full z-50 bg-opacity-60 h-full bg-gray cursor-pointer w-10 hover:bg-gray opacity-100 transition duration-700 ease-in-out rounded-sm"
+                      onClick={handlePrevClick}
+                    >
+                      <AiOutlineArrowLeft />
+                    </div>
+                  ) : (
+                    <></>
+                  )}
+                </>
+              ) : (
+                <></>
+              )}
+              <div
+                ref={carouselRef}
+                className="flex flex-row gap-8 w-max transition-all duration-500 ease-in-out "
+                style={{
+                  transform: `translateX(-${currentIndex}px)`,
+                }}
+              >
+                {books.map((book) => (
+                  <FavoriteBook key={book.ID} book={book} />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col mt-6">
+            <h1 className="font-inter font-medium text-3lg mb-4">
+              Comentários
+            </h1>
+            <div className="flex flex-row gap-3">
+              {mockBook.map((commentMockBook) => (
+                <CommentBook
+                  key={commentMockBook.id}
+                  commentBook={commentMockBook}
+                />
               ))}
             </div>
           </div>

@@ -9,9 +9,10 @@ export default {
     },
 
     fontSize: {
-      xs: ".75rem",
+      xs: "7px",
       sm: "10px",
       base: "12px",
+      normal: "14px",
       medium: "16px",
       lg: "24px",
       "2lg": "54px",
@@ -51,6 +52,7 @@ export default {
       backgroundColor: {
         red: "#990000",
         dark: "#414141",
+        "light-gray": "#777777",
         "dark-gray": "#2E2E2E",
         "light-red": "#B80000",
         gray: "#D9D9D9",

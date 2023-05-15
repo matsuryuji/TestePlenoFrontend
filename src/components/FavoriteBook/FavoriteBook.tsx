@@ -9,6 +9,8 @@ import FULLSTAR from "@/assets/fullStar.png";
 import HALFSTAR from "@/assets/halfStar.png";
 import EMPTYSTAR from "@/assets/emptyStar.png";
 import Rating from "react-rating-stars-component";
+import { truncateString } from "@/utils/truncate-string";
+import { formatDate } from "@/utils/format-date";
 
 interface FavoriteBookProps {
   book: iFavoriteBook;
@@ -18,20 +20,6 @@ const FavoriteBook: React.FC<FavoriteBookProps> = ({ book }) => {
   if (!book) {
     return null;
   }
-  const truncateString = (str: string, limit: number) => {
-    return str.length > limit ? `${str.slice(0, limit)}...` : str;
-  };
-
-  const formatDate = (dateString: string): string => {
-    const date = new Date(dateString);
-    const options: Intl.DateTimeFormatOptions = {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-      timeZone: "UTC",
-    };
-    return date.toLocaleDateString("pt-BR", options);
-  };
 
   const filterMockImage = (ID: number) => {
     if (ID === 1) {
