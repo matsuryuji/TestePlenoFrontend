@@ -13,6 +13,7 @@
 
 `json-server --watch src/Mocks/mock.json --port 3333`
 
+Dentro do projeto tem um pseudologin onde o login é teste@teste.com e teste12345, mas pode ser alterado diretamente no mock.json
 Abrirá na porta http://localhost:3333.
 ## `O que eu gostaria que fosse feito`
 Essa listagem são tarefas que eu poderia ter feito e ter aperfeiçoado mais o projeto mas que acabei não tendo tempo e para não atrasar mais o teste do que já estava.
