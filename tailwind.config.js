@@ -6,6 +6,7 @@ export default {
       sm: "4px",
       md: "9px",
       lg: "11px",
+      xl: "18px",
     },
 
     fontSize: {
@@ -15,8 +16,8 @@ export default {
       normal: "14px",
       medium: "16px",
       lg: "24px",
-      "2lg": "54px",
-      "3lg": "32px",
+      "2lg": "32px",
+      "3lg": "54px",
       xl: "64px",
     },
     extend: {

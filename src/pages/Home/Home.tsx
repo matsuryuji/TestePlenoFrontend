@@ -6,6 +6,7 @@ import BIOGRAFIAS from "@/assets/ImageBiografias.svg";
 import IT from "@/assets/it.png";
 import EDLORRAINE from "@/assets/edlorraine.png";
 import COMAMOR from "@/assets/comamor.png";
+import BLOOD from "@/assets/blood.svg";
 import {
   CategoryBox,
   CommentBook,
@@ -91,7 +92,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col">
       <div className="flex flex-row justify-between">
         <div className="bg-dark-gray w-[806px] h-[95px] rounded-br-[250px] rounded-bl-[50px] shadow-lg relative">
           <div className="flex flex-row pt-4">
@@ -153,7 +154,7 @@ export default function Home() {
           <div className="bg-blue w-[333px] h-[313px] mt-4 rounded-md shadow-sm">
             <div className="flex flex-col items-center mt-5">
               <img src={BIOGRAFIAS} alt="Briografias" className="rounded-sm" />
-              <h1 className="font-sail text-white text-2lg leading-[50px] mt-2">
+              <h1 className="font-sail text-white text-3lg leading-[50px] mt-2">
                 Biografias
               </h1>
               <p className="font-teko text-white text-lg w-[55%] text-center mt-2 leading-[28px]">
@@ -164,7 +165,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col overflow-x-hidden ">
           <div className="flex flex-col" ref={windowRef}>
-            <h1 className="font-inter font-medium text-3lg mb-4">
+            <h1 className="font-inter font-medium text-2lg mb-4">
               Livros Favoritos
             </h1>
             <div
@@ -207,8 +208,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col mt-6">
-            <h1 className="font-inter font-medium text-3lg mb-4">
+          <div className="flex flex-col mt-6 mb-5">
+            <h1 className="font-inter font-medium text-2lg mb-4">
               Comentários
             </h1>
             <div className="flex flex-row gap-3">
@@ -218,6 +219,22 @@ export default function Home() {
                   commentBook={commentMockBook}
                 />
               ))}
+            </div>
+          </div>
+          <div className="flex flex-row bg-dark h-[220px] mr-5 rounded-xl shadow-sm justify-between">
+            <img src={BLOOD} alt="blood" className="w-[355px] h-[226px]" />
+            <div className="flex flex-col mr-9">
+              <div className="flex flex-col items-end">
+                <p className="font-rubik-wet-paint text-3lg text-white">
+                  Clássicos
+                </p>
+                <p className="font-rubik-wet-paint text-3lg text-white">
+                  do Terror
+                </p>
+              </div>
+              <p className="font-teko text-white text-lg">
+                Grandes classicos de terror, historias de arrepiar.
+              </p>
             </div>
           </div>
         </div>
