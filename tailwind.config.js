@@ -32,6 +32,7 @@ export default {
         strong: ["strong"],
         inter: ["Inter"],
         teko: ["Teko"],
+        poppins: ["Poppins"],
         sail: ["Sail"],
         "rubik-glitch": ["Rubik Glitch"],
         "russo-one": ["Russo One"],

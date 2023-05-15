@@ -24,7 +24,7 @@ const CommentBook: React.FC<CommentBookProps> = ({ commentBook }) => {
         setTextFormat(
           commentBook.commentDescription.substring(
             0,
-            commentBook.commentDescription.lastIndexOf(" ", 159)
+            commentBook.commentDescription.lastIndexOf(" ", 123)
           ) + "..."
         );
       }

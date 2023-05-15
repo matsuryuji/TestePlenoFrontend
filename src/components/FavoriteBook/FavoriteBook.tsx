@@ -40,8 +40,8 @@ const FavoriteBook: React.FC<FavoriteBookProps> = ({ book }) => {
           alt="dracula"
         />
         <div className="ml-2">
-          <p className="text-medium font-poppins font-medium text-black mb-3">
-            {truncateString(book.NOME, 28)}
+          <p className="text-[15px] font-poppins font-medium text-black mb-3 leading-6">
+            {truncateString(book.NOME, 24)}
           </p>
           <div className="flex flex-row">
             <img src={EDITORA} alt="editora" />
