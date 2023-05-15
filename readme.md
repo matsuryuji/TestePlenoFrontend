@@ -1,35 +1,27 @@
-## INSTRUÇÕES PARA O TESTE TÉCNICO
 
-- Crie um fork deste projeto (https://github.com/CAPYS-IT/TestePlenoFrontend).
-  É preciso estar logado na sua conta Github;
-- Quando você começar, faça um commit vazio com a mensagem "Iniciando o teste de tecnologia" e quando terminar, faça o commit com uma mensagem "Finalizado o teste de tecnologia";
-- Commit após cada ciclo de refatoração pelo menos;
-- Não use branches;
-- Você deve prover evidências suficientes de que sua solução está completa indicando, no mínimo, que ela funciona;
-- Não há restrição quanto ao uso de bibliotecas de apoio;
-- No final envie para o RH o link do seu projeto.
-- Os arquivos de Mocks estão salvos na pasta src/mocks
-- O link para acesso ao arquivo Figma: (https://www.figma.com/file/D3AXMgEYGulyd8MYIuLE5O/Teste-Frontend-Pleno?node-id=0-1)
+# `Setup`
 
----
+1. Para rodar este projeto primeiramente:
 
-## O TESTE
+`yarn`
 
-- Criar layout de Login seguindo o protótipo Figma;
-- Criar layout da pagina home seguindo o protótipo Figma;
+2. Após instalar dependência, podemos rodar o comando:
 
----
+`yarn dev`
 
-## BÔNUS
+3. Como este projeto foi utilizado JSON-server é necessario utilizar os comandos para abrir dois arquivos json:
 
-- Componentes bem estruturados
-- Uso de programas para mockar os dados como por exemplo mockoon. (carregar o arquivo json do mockoon junto com o projeto para avaliação)
+`json-server --watch src/Mocks/mock.json --port 3333`
 
----
+Abrirá na porta http://localhost:3333.
+## `O que eu gostaria que fosse feito`
+3. Essa listagem são tarefas que eu poderia ter feito e ter aperfeiçoado mais o projeto mas que acabei não tendo tempo e para não atrasar mais o teste do que já estava.
 
-## PONTOS QUE SERÃO AVALIADOS
-
-- Boas práticas;
-- Estrutura de código e pastas;
-- Layout;
-- Estilização;
+- Testes unitários nos componentes;
+- Validações de trativa de erro caso a api não conseguir ser chamado (exemplo: tratar erro 400);
+- Loader para as requisições;
+- Certificar de que o projeto funcione bem em todos os navegadores (cross-browser), como Safari, Opera, Edge, etc.
+- Responsividade;
+## `Feedback`
+- Alterei a organização do JSON de comparando ao que estava antes;
+- A font-family Strong não está igual ao do figma, pois não consegui encontrar a font correta acabei exportando um Strong e algumas fontes que usufruia do Strong eu troquei para teko para ter um visual melhor;
